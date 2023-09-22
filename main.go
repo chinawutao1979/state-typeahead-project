@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"os"
 	"strings"
 
 	"github.com/graphql-go/graphql"
@@ -81,5 +82,10 @@ func main() {
 
 	http.Handle("/", http.FileServer(http.Dir("."))) // Serve static files (HTML, JS, CSS)
 
-	http.ListenAndServe(":8080", nil)
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	http.ListenAndServe(":"+port, nil)
+	//http.ListenAndServe(":8080", nil)
 }
