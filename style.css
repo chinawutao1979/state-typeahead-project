@@ -1,0 +1,37 @@
+#map {
+    height: 740px;
+    width: 100%;
+}
+/* Input box blue border style */
+#stateInput {
+    border: 2px solid #4B96D0;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+/* State suggestion hover style */
+#stateSuggestions div:hover {
+    background-color: #4B96D0; /* Change the background color to blue when hovering over the suggestion */
+    color: white; /* Change the text color to white */
+    cursor: pointer;
+}
+
+/* Suggestion box style */
+#stateSuggestions {
+    max-height: 200px;
+    max-width: 200px;
+    overflow-y: auto;
+    border: 2px solid rgb(207, 204, 204);
+    padding: 10px;
+    box-sizing: border-box;
+    position: absolute; /* Set to absolute positioning to make it float on the page */
+    top: 5; /* Start from the top */
+    left: 2; /* Start from the left */
+    display: none; /* Initially hide the suggestion box */
+    background-color: #fff; /* Add background color */
+    z-index: 2; /* Place the suggestion box below the map */
+}
+
+#stateSuggestions:not(:empty) {
+    display: block; /* Display the suggestion box when it's not empty */
+}
